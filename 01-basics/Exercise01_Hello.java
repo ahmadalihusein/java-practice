@@ -9,6 +9,9 @@ public class Exercise01_Hello {
         System.out.println("Hello, " + name + "!");
         System.out.println("You will get a job in " + year + ".");
 
+        String city = "Kuala Lumpur";
+        System.out.println("working in " + city);
+
         // TODO: make a variable called `city` set to "Kuala Lumpur"
         //       and print: "Working in Kuala Lumpur"
         // (delete this comment block when done)

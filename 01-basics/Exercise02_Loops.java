@@ -13,6 +13,26 @@ public class Exercise02_Loops {
         // TODO 1: print only the EVEN numbers from 1 to 20
         //         (hint: the % operator gives a remainder. x % 2 == 0 means even)
 
+        for (int i = 2; i <= 20; i += 2) {
+            System.out.println(i); 
+        }
+
+        System.out.println("---");
+
+        int i = 1;
+        while (i <= 30) {
+            if (i % 3 == 0 && i % 5 ==0){
+                System.out.println("FizzBuzz");
+            } else if (i % 3 == 0){
+                System.out.println("Fizz");
+            } else if (i % 5 == 0) {
+                System.out.println("Buzz");
+            } else {
+                System.out.println(i);
+            }
+            i++;
+    }
+
         // TODO 2: print "FizzBuzz" classic:
         //   for numbers 1 to 30:
         //     - if divisible by 3 AND 5  -> print "FizzBuzz"
