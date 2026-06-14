@@ -20,11 +20,30 @@ public class Exercise01_Arrays {
         // TODO 1: calculate and print the SUM of all scores
         //         (hint: make a variable `total = 0`, add each score to it in a loop)
 
+        int total = 0;
+        for (int score : scores) {
+            total += score;
+        }
+        System.out.println("Total: " + total);
+
         // TODO 2: calculate and print the AVERAGE
         //         (hint: total divided by scores.length —
         //          but length is an int, so cast: (double) total / scores.length)
 
+        double average = (double) total / scores.length;
+        System.out.println("Average: " + average);
+
         // TODO 3: find and print the HIGHEST score
         //         (hint: track a `max` variable, update it when you find something bigger)
+
+        
+        int max = scores[0];  // start with the first score as the max
+        for (int score : scores){
+            if (score > max){
+                max = score;
+            }
+        }
+        System.out.println("Highest: " + max );
+        
     }
 }
