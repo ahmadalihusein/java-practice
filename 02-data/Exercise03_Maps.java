@@ -22,10 +22,24 @@ public class Exercise03_Maps {
         System.out.println("---");
 
         // TODO 1: add one more person to the phone book, then look up their number.
+        phoneBook.put("Luqman", "018-3971211");
+        System.out.println("Luqman's number: " + phoneBook.get("Luqman"));
+
+        for (String name : phoneBook.keySet()){
+            System.out.println(name + "-> " + phoneBook.get(name));
+        }
+
+        System.out.println("---");
 
         // TODO 2: make a NEW HashMap<String, Integer> called `prices`
         //         (note: Integer, because the values are numbers).
         //         Add: "Nasi Lemak" -> 5, "Teh Tarik" -> 3
         //         Then print the price of Nasi Lemak.
+
+        HashMap<String, Integer> prices = new HashMap<>();
+        prices.put("Nasi Lemak", 5);
+        prices.put("Teh Tarik", 3);
+
+        System.out.println("Price of nasi lemak: RM" + prices.get( "Nasi Lemak"));
     }
 }
