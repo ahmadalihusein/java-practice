@@ -26,7 +26,7 @@ public class Exercise03_Maps {
         System.out.println("Luqman's number: " + phoneBook.get("Luqman"));
 
         for (String name : phoneBook.keySet()){
-            System.out.println(name + "-> " + phoneBook.get(name));
+            System.out.println(name + " -> " + phoneBook.get(name));
         }
 
         System.out.println("---");
