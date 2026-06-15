@@ -23,10 +23,24 @@ public class Exercise03_ListOfObjects {
         System.out.println("---");
 
         // TODO 1: add one more Product of your choice to the shop, then print the menu again.
+        shop.add(new Product("Roti Telur", 4));
+         System.out.println("Menu:");
+         for (Product p : shop) {
+        System.out.println("- " + p.name + ": RM" + p.price);
+         }
+         System.out.println("---");
 
         // TODO 2: calculate and print the TOTAL price of everything in the shop.
         //         (hint: same "running total" pattern from 02-data — make `total = 0`,
         //          loop through, and add each p.price to it.)
+        int total = 0;
+        int addTotal = 0;
+        for (Product p : shop) {
+            
+                total = addTotal += p.price;
+            
+        }
+        System.out.println(total);
     }
 }
 

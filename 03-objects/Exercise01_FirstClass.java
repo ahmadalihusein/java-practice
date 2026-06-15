@@ -10,7 +10,8 @@ public class Exercise01_FirstClass {
         Student alice = new Student();
         alice.name = "Alice";
         alice.age = 20;
-
+        //alice.course = "Diploma IT";
+        
         // Build a SECOND student — same blueprint, different data:
         Student bob = new Student();
         bob.name = "Bob";

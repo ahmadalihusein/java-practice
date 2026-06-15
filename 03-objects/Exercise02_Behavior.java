@@ -10,6 +10,7 @@ public class Exercise02_Behavior {
         // Thanks to the constructor, we set name+age in ONE line (no more dot-by-dot):
         Dog rex = new Dog("Rex", 3);
         Dog milo = new Dog("Milo", 5);
+        //Dog coco = new Dog("Coco", 5)
 
         // Call a method (an action the object can do):
         rex.bark();
@@ -18,10 +19,15 @@ public class Exercise02_Behavior {
         System.out.println("---");
 
         // TODO 1: create a third Dog with your own name + age, then make it bark().
+       Dog coco = new Dog("Coco", 5);
+       coco.bark();
+        System.out.println("---");
+
 
         // TODO 2: add a new method to the Dog class below called `birthday()`
         //         that increases the dog's age by 1 and prints
         //         "<name> is now <age>". Then call rex.birthday().
+        rex.birthday();
     }
 }
 
@@ -42,4 +48,9 @@ class Dog {
     }
 
     // TODO 2 hint: add your `birthday()` method here
+    void birthday(){
+        age += 1;
+        System.out.println(name + " is now " + age);
+    }
+
 }
