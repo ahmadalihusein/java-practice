@@ -34,8 +34,8 @@ git log --oneline             # see my history of saves
 
 ## Roadmap (do in order — finish what I start)
 - [x] 01-basics — variables, loops/FizzBuzz, methods
-- [ ] 02-data — arrays, ArrayList, HashMap   <-- I AM HERE
-- [ ] 03-objects — classes & objects
+- [x] 02-data — arrays, ArrayList, HashMap   <-- I AM HERE
+- [x] 03-objects — classes & objects
 - [ ] 04-project-todo — first complete console app
 - [ ] 05-project-database — the app + a real SQL database
 
@@ -45,6 +45,7 @@ git log --oneline             # see my history of saves
   To get decimals, cast: `(double) total / count`.
 - A method that returns true/false can just `return n % 2 == 0;` — no if/else needed.
 - A method should usually either RETURN a value or PRINT — try not to mix both.
+- A println inside a loop will print every value from an array.
 
 ## If I lose the Claude chat
 - All my code + this file + the README are safe in this folder.
@@ -53,3 +54,4 @@ git log --oneline             # see my history of saves
   I'd be the hands. The learning is mine either way.
 
 Last updated: 2026-06-13
+Updated : 2026-06-16

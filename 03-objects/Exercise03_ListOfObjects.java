@@ -34,13 +34,10 @@ public class Exercise03_ListOfObjects {
         //         (hint: same "running total" pattern from 02-data — make `total = 0`,
         //          loop through, and add each p.price to it.)
         int total = 0;
-        int addTotal = 0;
         for (Product p : shop) {
-            
-                total = addTotal += p.price;
-            
-        }
-        System.out.println(total);
+            total += p.price;
+             }
+        System.out.println("Total price of menu: RM" + total);
     }
 }
 
