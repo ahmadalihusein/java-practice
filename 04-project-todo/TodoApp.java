@@ -11,7 +11,7 @@ public class TodoApp {
     public static void main(String[] args) {
         // Our list of tasks — an ArrayList of Task OBJECTS (just like your Products).
         ArrayList<Task> tasks = new ArrayList<>();
-
+        
         // Scanner is the NEW tool: it reads what the user types in the terminal.
         Scanner scanner = new Scanner(System.in);
 
@@ -43,16 +43,34 @@ public class TodoApp {
                 //         String box = t.done ? "[x]" : "[ ]";
                 //         System.out.println(box + " " + t.name);
                 System.out.println("(Task list: )");
-                for(Task t : tasks){
-                System.out.println("- " + t.name ? "[X]" : "[ ]"; );
-            }
+             
+                for(int i = 0; i < tasks.size(); i++){
+            Task t = tasks.get (i);
+            
+                String box = t.done ? "[x]" : "[ ]";
+                System.out.println(i + 1 + ". " + t.name + " " + box);            
+           }
+          
+        
 
             } else if (choice.equals("3")) {
                 // ===== STAGE 4: Mark a task as done =====
                 // TODO: this one's the trickiest — leave it for last.
                 //       Show the tasks with numbers, ask which number, set that task's
                 //       .done = true. We'll tackle it together when you get here.
-                System.out.println("(Mark done — not built yet)");
+                System.out.println("(Mark task as done)");
+
+               // System.out.println(i + 1 + ". " + t.name + "" + box); 
+                 for(int i = 0; i < tasks.size(); i++){
+            Task t = tasks.get (i);
+            
+                String box = t.done ? "[x]" : "[ ]";
+                System.out.println(i + 1 + ". " + t.name + "" + box);            
+           }
+
+                String input = scanner.nextLine();
+           int chosen = Integer.parseInt(input);
+                 tasks.get(chosen - 1).done = true;
 
             } else if (choice.equals("4")) {
                 System.out.println("Bye! Keep grinding. 👊");
