@@ -69,6 +69,21 @@ public class DbRead {
                 System.out.println(id2 + ". " + name2 + " - RM" + price2);
             } 
 
+System.out.println("---------");
+
+            ResultSet rs3 = stmt.executeQuery("select * from products");
+
+            System.out.println("Display values in format");
+
+            while(rs3.next()){
+
+                int id3 = rs3.getInt("id");          // read the "id" column of this row
+            String name3 = rs3.getString("name"); // read the "name" column
+            int price3 = rs3.getInt("price");     // read the "price" column
+            System.out.println("Products #" + id3 + ": " + name3 + " costs RM" + price3);
+
+            }
+
         // 6) Always close the connection when done (frees resources).
         conn.close();
         System.out.println("Done.");
