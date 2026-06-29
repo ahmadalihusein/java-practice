@@ -36,6 +36,8 @@ public class TodoApp {
                String name = scanner.nextLine();
                 tasks.add(new Task(name));
 
+
+
             } else if (choice.equals("2")) {
                 // ===== STAGE 3: View tasks =====
                 // TODO: loop through `tasks` and print each one.
@@ -72,6 +74,8 @@ public class TodoApp {
            int chosen = Integer.parseInt(input);
                  tasks.get(chosen - 1).done = true;
 
+
+                 
             } else if (choice.equals("4")) {
                 System.out.println("Bye! Keep grinding. 👊");
                 break;   // breaks out of the while(true) loop = quits the app
