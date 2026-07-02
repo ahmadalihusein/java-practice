@@ -1,38 +1,49 @@
-# Java Practice — Road to Internship (Kuala Lumpur)
+# Java Practice Projects
 
-Goal: go **deep** on Java + SQL + Git. Get good at one thing, not okay at five.
+A self-directed learning repository where I built up from Java fundamentals to a
+database-backed application. Each folder is a step up in difficulty, ending in a
+persistent task manager that stores its data in MySQL.
 
-## Setup checklist
-- [x] JDK 21 installed
-- [x] Git installed
-- [x] VSCode installed
-- [ ] VSCode "Extension Pack for Java" installed (Microsoft) — gives Run buttons + autocomplete
-- [ ] Reopen VSCode after installing Java so it sees the JDK
+**Skills demonstrated:** Java · Object-Oriented Programming · SQL · JDBC · MySQL · Git
 
-## How to run any `.java` file
-Open a terminal in VSCode (`Ctrl + ` `) and run:
+---
+
+## Highlight project — Persistent To-Do App (`07-project-persistent-todo`)
+A command-line task manager backed by a **MySQL** database, so tasks survive
+between runs.
+
+- Full **CRUD** functionality — add, view, mark-as-done, and delete tasks
+- Connects Java to MySQL through **JDBC** (`Connection`, `Statement`, `ResultSet`)
+- Uses SQL `INSERT`, `SELECT`, `UPDATE`, and `DELETE`
+- Handles invalid input and database errors with `try/catch`
+
+**Run it:**
 ```
-java path\to\File.java
+java -cp "libs/mysql-connector-j-8.4.0.jar" 07-project-persistent-todo/TodoAppDB.java
 ```
-Java 21 can run a single file directly — no separate compile step needed for practice.
+(Requires a running MySQL server and a `tasks` table — see
+`07-project-persistent-todo/schema.sql`.)
 
-## The roadmap (do them in order)
-Each folder gets harder. Don't skip. Finish what you start.
+---
 
-1. **01-basics** — variables, loops, conditions, methods. Muscle memory.
-2. **02-data** — arrays, lists, maps. The bread and butter of every real app.
-3. **03-objects** — classes, objects, encapsulation. The Java way of thinking.
-4. **04-project-todo** — a real console To-Do app (your first complete thing).
-5. **05-project-database** — the To-Do app, but saving to a real SQL database.
-   This single skill is most of what a junior dev does day to day.
+## What's in each folder
+| Folder | Focus |
+|--------|-------|
+| `01-basics` | variables, loops, conditions, methods |
+| `02-data` | arrays, `ArrayList`, `HashMap` |
+| `03-objects` | classes, objects, constructors, methods |
+| `04-project-todo` | first complete console app (in-memory) |
+| `05-sql-basics` | SQL fundamentals (`CREATE`, `INSERT`, `SELECT`) |
+| `06-java-database` | connecting Java to MySQL with JDBC |
+| `07-project-persistent-todo` | **capstone** — the To-Do app, database-backed |
 
-## How to work with Claude
-For each exercise: read the TODO in the file, write your attempt, run it,
-then ask me to review. I'll tell you what's wrong and *why* — that's how you learn.
+## Tech used
+- **Java 21** (Temurin JDK)
+- **MySQL / MariaDB** (via XAMPP)
+- **JDBC** (MySQL Connector/J)
+- **Git** for version control
 
-## Git habit (do this every session)
-```
-git add .
-git commit -m "did exercise X"
-```
-Committing your work like this is exactly what companies expect on day one.
+---
+
+*Built as internship preparation, focusing on the core stack used by many
+software teams: Java, SQL, and Git.*

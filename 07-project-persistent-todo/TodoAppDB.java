@@ -33,15 +33,13 @@ public class TodoAppDB {
 
             if (choice.equals("1")) {
                 // ===== STAGE 2: Add a task -> INSERT =====
-                // Ask for the task name (scanner.nextLine()), then INSERT it.
+                
                 System.out.println("Add task:- ");
                 String taskname = scanner.nextLine();
-                // Look at DbInsert.java — use stmt.executeUpdate with an INSERT.
                 int values = stmt.executeUpdate("INSERT into tasks (name) values  ('"+ taskname + "')");
-                // The SQL: INSERT INTO tasks (name) VALUES ('the name here')
-                // TODO: write it. Print a confirmation like "Added: <name>".
+                
                 System.out.println("Task added: " + taskname );
-                //System.out.println("(Add — not built yet)");
+                
 
             } else if (choice.equals("2")) {
                 // ===== STAGE 3: View tasks -> SELECT =====
@@ -55,14 +53,10 @@ public class TodoAppDB {
                     String box = rs.getBoolean("done") ? "[x]" : "[ ]";
                     System.out.println(id + ". " + name + " " + box);
                 }
-                // For the checkbox: getBoolean("done") gives true/false, so
-                //   String box = rs.getBoolean("done") ? "[x]" : "[ ]";
-                // TODO: write the loop.
-               // System.out.println("(View — not built yet)");
 
             } else if (choice.equals("3")) {
                 // ===== STAGE 4: Mark as done -> UPDATE =====
-                // First show the tasks (you can reuse your Stage 3 code).
+    
                 ResultSet rs = stmt.executeQuery("select * from tasks");
                 //boolean done = rs.getBoolean("done");
                 while(rs.next()){
@@ -74,12 +68,9 @@ public class TodoAppDB {
                 // Then ask which id, read it, and run an UPDATE:  
                 System.out.print("Which task id to mark done? ");
                 int chosen = Integer.parseInt(scanner.nextLine());
-              //int chosen = Integer.parseInt(choice);
-               // String box = rs.getBoolean("done") ? "[x]" : "[ ]";
-                //   UPDATE tasks SET done = TRUE WHERE id = <that id>
+              
                 int taskDone = stmt.executeUpdate("Update tasks set done  =  TRUE where id = " + chosen);
-                // Use executeUpdate (it's a change, not a query).
-                // TODO: write it.
+                
                 System.out.println("Marked task " + chosen + " as done.");
 
 
@@ -107,7 +98,7 @@ public class TodoAppDB {
 
 
             } else if(choice.equals("5")){
-                conn.close();   // close the database bridge before leaving
+                conn.close();   
                 System.out.println("Saved. Bye! 👊");
                 break;
 
