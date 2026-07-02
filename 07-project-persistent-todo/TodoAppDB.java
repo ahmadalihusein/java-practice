@@ -73,8 +73,11 @@ public class TodoAppDB {
                 System.out.print("Which task id to mark done? ");
                 int chosen = Integer.parseInt(scanner.nextLine());
               
-                int taskDone = stmt.executeUpdate("Update tasks set done  =  TRUE where id = " + chosen);
-                
+                //int taskDone = stmt.executeUpdate("Update tasks set done  =  TRUE where id = " + chosen); -- old
+                PreparedStatement ps = conn.prepareStatement("update tasks set done = true where id = (?)");
+                ps.setInt(1, chosen);
+                ps.executeUpdate();
+
                 System.out.println("Marked task " + chosen + " as done.");
 
 
@@ -91,19 +94,27 @@ public class TodoAppDB {
                 int chosen = Integer.parseInt(scanner.nextLine());
 
                 String removeName = "";
-                ResultSet rs1 = stmt.executeQuery("select name from tasks where id = " + chosen );
+                //ResultSet rs1 = stmt.executeQuery("select name from tasks where id = " + chosen ); -- old
+                PreparedStatement ps = conn.prepareStatement("select name from tasks where id = (?)");
+                //ResultSet rs1 = ps.executeQuery();
+                ps.setInt(1, chosen);
+                ResultSet rs1 = ps.executeQuery();
+
                 if(rs1.next()){
                     removeName = rs1.getString("name");
                 }
 
-                int remove = stmt.executeUpdate("DELETE from tasks where id = " + chosen);
+                //int remove = stmt.executeUpdate("DELETE from tasks where id = " + chosen);
+                PreparedStatement psDel = conn.prepareStatement("delete from tasks where id = (?)");
+                psDel.setInt(1, chosen);
+                psDel.executeUpdate();
                 
                 System.out.println("Removed " + '"'+ removeName+ '"' + " from to-do list");
 
 
             } else if(choice.equals("5")){
                 conn.close();   
-                System.out.println("Saved. Bye! 👊");
+                System.out.println("Saved. Bye!");
                 break;
 
             }else {
