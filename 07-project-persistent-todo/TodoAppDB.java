@@ -8,6 +8,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Scanner;
 
@@ -63,12 +64,13 @@ public class TodoAppDB {
     
                 ResultSet rs = stmt.executeQuery("select * from tasks");
                 //boolean done = rs.getBoolean("done");
-                while(rs.next()){
+                /*while(rs.next()){
                     int id = rs.getInt("id");
                     String name = rs.getString("name");   
                     String box = rs.getBoolean("done") ? "[x]" : "[ ]";
                     System.out.println(id + ". " + name + " " + box);
-                }
+                }*/
+               printTask(stmt);
                 // Then ask which id, read it, and run an UPDATE:  
                 System.out.print("Which task id to mark done? ");
                 int chosen = Integer.parseInt(scanner.nextLine());
@@ -84,12 +86,13 @@ public class TodoAppDB {
             } else if (choice.equals("4")) {
                 ResultSet rs = stmt.executeQuery("select * from tasks");
                 //boolean done = rs.getBoolean("done");
-                while(rs.next()){
+                /*while(rs.next()){
                     int id = rs.getInt("id");
                     String name = rs.getString("name");   
                     String box = rs.getBoolean("done") ? "[x]" : "[ ]";
                     System.out.println(id + ". " + name + " " + box);
-                }
+                }*/
+               printTask(stmt);
               System.out.print("Which task to remove? ");
                 int chosen = Integer.parseInt(scanner.nextLine());
 
@@ -123,5 +126,23 @@ public class TodoAppDB {
         }
 
         scanner.close();
+
+
+
+    }
+    
+    public static void printTask(Statement stmt)throws SQLException{
+        ResultSet rs = stmt.executeQuery("select * from tasks");
+        while(rs.next()){
+
+            int id = rs.getInt("id");
+            String name = rs.getString("name");
+            String box = rs.getBoolean("done")? "[x]" : "[ ]";
+            System.out.println(id + ". " + name + " " + box);
+
+        }
+
     }
 }
+
+
