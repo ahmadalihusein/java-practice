@@ -6,6 +6,7 @@
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.Scanner;
@@ -36,7 +37,10 @@ public class TodoAppDB {
                 
                 System.out.println("Add task:- ");
                 String taskname = scanner.nextLine();
-                int values = stmt.executeUpdate("INSERT into tasks (name) values  ('"+ taskname + "')");
+                //int values = stmt.executeUpdate("INSERT into tasks (name) values  ('"+ taskname + "')"); --- old query 
+                PreparedStatement ps = conn.prepareStatement("INSERT into tasks (name) values (?)"); // new, better
+                ps.setString(1, taskname);
+                ps.executeUpdate();
                 
                 System.out.println("Task added: " + taskname );
                 
