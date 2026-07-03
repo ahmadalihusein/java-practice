@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <!-- Every Maven project needs this line -->
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- These three lines are your project's "name tag" (id) -->
+    <groupId>com.ahmad</groupId>
+    <artifactId>maven-intro</artifactId>
+    <version>1.0</version>
+
+    <properties>
+        <!-- Tell Maven to compile with Java 21 -->
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <!-- THE MAGIC PART: list the libraries you want.
+         Maven downloads them automatically. No manual jar, no -cp. -->
+    <dependencies>
+        <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <version>8.4.0</version>
+        </dependency>
+    </dependencies>
+
+</project>
